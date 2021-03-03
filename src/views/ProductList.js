@@ -19,7 +19,7 @@ function ProductList(props) {
   return (
     <Switch>
       <Route path="/products/detail/:productId">
-        <ProductDetail />
+        <ProductDetail productList={props.productList} />
       </Route>
       <Route path="/products">
         <div className="productList">
