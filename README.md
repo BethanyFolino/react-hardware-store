@@ -16,7 +16,7 @@ Inside the switch, but before the `/products` route, create another route. Set t
 
 ### 3. Add a Link to `ProductSummary` to the products detail page.
 
-To navigate to the product's detail page, you will need to import and create a Link on the `ProductSummary` page. Set the `to` prop on the `Link` component to `{"/products/detail" + props.product.id}`
+To navigate to the product's detail page, you will need to import and create a Link on the `ProductSummary` page. Set the `to` prop on the `Link` component to `{"/products/detail/" + props.product.id}`
 
 ### 4. Now open the `ProductDetail` component and Initialize the state
 
@@ -61,6 +61,6 @@ Every item has a quantity and a department. Using these fields, you can filter t
 
 # Credits and References
 
-Author:
+Author: Bethany Folino
 
-References:
+References: help from John Anderson
