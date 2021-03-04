@@ -16,11 +16,15 @@ Step 2
 */
 
 function ProductList(props) {
+  const { productList } = props;
   return (
     <Switch>
-      <Route path="/products/detail/:productId">
-        <ProductDetail productList={props.productList} />
-      </Route>
+      <Route
+        path="/products/detail/:productId"
+        render={(props) => (
+          <ProductDetail {...props} productList={productList} />
+        )}
+      ></Route>
       <Route path="/products">
         <div className="productList">
           <h2>Our Products</h2>
