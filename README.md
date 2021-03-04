@@ -66,4 +66,4 @@ Every item has a quantity and a department. Using these fields, you can filter t
 
 Author: Bethany Folino
 
-References: help from John Anderson and Gabby Basha
+References: help from John Anderson and Gabby Basha, https://stackoverflow.com/questions/45144085/react-this-props-params-undefined
