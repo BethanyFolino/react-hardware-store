@@ -11,8 +11,34 @@ function ProductDetail(props) {
       props.productList.find(
         (item) => item.id === props.match.params.productId
       ) || {};
-    console.log(myObject);
+    setProduct(myObject);
+    // eslint-disable-next-line
   }, []);
+
+  function outOfStock(props) {
+    if (product.quantity === 0) {
+      product.price = "Out of Stock";
+    }
+    return product.price;
+  }
+
+  function gardenFilter(props) {
+    props.productList.filter((items) =>
+      items.department.includes("garden").return(items)
+    );
+  }
+
+  function hardwareFilter(props) {
+    props.productList.filter((items) =>
+      items.department.includes("hardware").return(items)
+    );
+  }
+
+  function toolFilter(props) {
+    props.productList.filter((items) =>
+      items.department.includes("tool").return(items)
+    );
+  }
 
   return (
     <div>

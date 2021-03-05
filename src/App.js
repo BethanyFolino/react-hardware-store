@@ -104,11 +104,33 @@ function App(props) {
     });
   }, []);
 
+  // function outOfStock(props) {
+  //   if (product.quantity === 0) {
+  //     product.price = "Out of Stock";
+  //   }
+  //   return product.price;
+  // }
+
+  function gardenFilter(props) {
+    props.productList.filter((items) => items.department.includes("garden"));
+  }
+
+  function hardwareFilter(props) {
+    props.productList.filter((items) => items.department.includes("hardware"));
+  }
+
+  function toolFilter(props) {
+    props.productList.filter((items) => items.department.includes("tool"));
+  }
+
   return (
     <div className="App">
       <div>
         <h1>Welcome to Kenzie Hardware!</h1>
-        <Navigation/>
+        <Navigation />
+        <button onClick={gardenFilter}>Garden</button>
+        <button onClick={hardwareFilter}>Hardware</button>
+        <button onClick={toolFilter}>Tool</button>
       </div>
       <Switch>
         <Route
