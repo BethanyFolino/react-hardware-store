@@ -4,7 +4,10 @@ import { Link } from "react-router-dom";
 function ProductSummary(props) {
   return (
     <div className="productSummary">
-      {props.product.name} - ${props.product.price}{" "}
+      {props.product.name} -{" "}
+      {props.product.quantity === 0
+        ? "Out of Stock"
+        : "$" + props.product.price}{" "}
       <span className="productArrow">&gt;</span>
       <Link to={"/products/detail/" + props.product.id}>Product Detail</Link>
     </div>

@@ -127,9 +127,6 @@ function App(props) {
       <div>
         <h1>Welcome to Kenzie Hardware!</h1>
         <Navigation />
-        <button onClick={() => setFilter("garden")}>Garden</button>
-        <button onClick={() => setFilter("hardware")}>Hardware</button>
-        <button onClick={() => setFilter("tool")}>Tools</button>
       </div>
       <Switch>
         <Route

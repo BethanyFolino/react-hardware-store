@@ -1,5 +1,5 @@
 import React from "react";
-import { Route, Switch } from "react-router-dom";
+import { Link, Route, Switch } from "react-router-dom";
 import ProductSummary from "../components/ProductSummary";
 import ProductDetail from "../components/ProductDetail";
 
@@ -18,25 +18,64 @@ Step 2
 function ProductList(props) {
   const { productList } = props;
   return (
-    <Switch>
-      <Route
-        path="/products/detail/:productId"
-        render={(props) => (
-          <ProductDetail {...props} productList={productList} />
-        )}
-      ></Route>
-      <Route path="/products">
-        <div className="productList">
-          <h2>Our Products</h2>
+    <div className="productList">
+      <h2>Our Products</h2>
+      <Link to={"/products/garden"}>
+        <button>Garden</button>
+      </Link>
+      <Link to={"/products/hardware"}>
+        <button>Hardware</button>
+      </Link>
+      <Link to={"/products/tool"}>
+        <button>Tool</button>
+      </Link>
+      <Switch>
+        <Route
+          path="/products/detail/:productId"
+          render={(props) => (
+            <ProductDetail {...props} productList={productList} />
+          )}
+        ></Route>
+        <Route path="/products/garden">
+          <ul>
+            {props.productList &&
+              props.productList
+                .filter((items) => items.department === "garden")
+                .map((product) => (
+                  <ProductSummary key={product.id} product={product} />
+                ))}
+          </ul>
+        </Route>
+        <Route path="/products/hardware">
+          <ul>
+            {props.productList &&
+              props.productList
+                .filter((items) => items.department === "hardware")
+                .map((product) => (
+                  <ProductSummary key={product.id} product={product} />
+                ))}
+          </ul>
+        </Route>
+        <Route path="/products/tool">
+          <ul>
+            {props.productList &&
+              props.productList
+                .filter((items) => items.department === "tool")
+                .map((product) => (
+                  <ProductSummary key={product.id} product={product} />
+                ))}
+          </ul>
+        </Route>
+        <Route path="/products">
           <ul>
             {props.productList &&
               props.productList.map((product) => (
                 <ProductSummary key={product.id} product={product} />
               ))}
           </ul>
-        </div>
-      </Route>
-    </Switch>
+        </Route>
+      </Switch>
+    </div>
   );
 }
 
