@@ -7,7 +7,7 @@ import Navigation from "./components/Navigation";
 
 function App(props) {
   const [state, setState] = useState({});
-
+  const [filter, setFilter] = useState();
   useEffect(() => {
     setState({
       productList: [
@@ -111,26 +111,25 @@ function App(props) {
   //   return product.price;
   // }
 
-  function gardenFilter(props) {
-    props.productList.filter((items) => items.department.includes("garden"));
-  }
+  // function gardenFilter(props) {
+  //   props.productList.filter((items) => items.department === "garden");
+  // }
 
-  function hardwareFilter(props) {
-    props.productList.filter((items) => items.department.includes("hardware"));
-  }
+  // function hardwareFilter(props) {
+  //   props.productList.filter((items) => items.department === "hardware");
+  // }
 
-  function toolFilter(props) {
-    props.productList.filter((items) => items.department.includes("tool"));
-  }
-
+  // function toolFilter(props) {
+  //   props.productList.filter((items) => items.department === "tool");
+  // }
   return (
     <div className="App">
       <div>
         <h1>Welcome to Kenzie Hardware!</h1>
         <Navigation />
-        <button onClick={gardenFilter}>Garden</button>
-        <button onClick={hardwareFilter}>Hardware</button>
-        <button onClick={toolFilter}>Tool</button>
+        <button onClick={() => setFilter("garden")}>Garden</button>
+        <button onClick={() => setFilter("hardware")}>Hardware</button>
+        <button onClick={() => setFilter("tool")}>Tools</button>
       </div>
       <Switch>
         <Route
