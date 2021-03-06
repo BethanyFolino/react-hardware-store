@@ -7,7 +7,7 @@ import Navigation from "./components/Navigation";
 
 function App(props) {
   const [state, setState] = useState({});
-  const [filter, setFilter] = useState();
+
   useEffect(() => {
     setState({
       productList: [
@@ -104,24 +104,6 @@ function App(props) {
     });
   }, []);
 
-  // function outOfStock(props) {
-  //   if (product.quantity === 0) {
-  //     product.price = "Out of Stock";
-  //   }
-  //   return product.price;
-  // }
-
-  // function gardenFilter(props) {
-  //   props.productList.filter((items) => items.department === "garden");
-  // }
-
-  // function hardwareFilter(props) {
-  //   props.productList.filter((items) => items.department === "hardware");
-  // }
-
-  // function toolFilter(props) {
-  //   props.productList.filter((items) => items.department === "tool");
-  // }
   return (
     <div className="App">
       <div>
