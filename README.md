@@ -1,1 +1,2 @@
-# Hardware Store
+# React Hardware Store
+React Hardware Store is a JavaScript/React hardware store app. This was a project I did as part of Kenzie Academy's software engineering program. I was given starter code for the available items at the store, and I was given the task of coding search and navigation functionality. The search functionality can be filtered by type of item the user wants to search for, and the user can go directly to an item's detail page. 
